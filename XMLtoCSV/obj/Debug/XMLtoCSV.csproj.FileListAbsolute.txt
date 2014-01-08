@@ -1,0 +1,8 @@
+C:\Jurik\Projekty\EShopConnection\XMLtoCSV\obj\Debug\ResolveAssemblyReference.cache
+C:\Jurik\Projekty\EShopConnection\XMLtoCSV\obj\Debug\XMLtoCSV.MainForm.resources
+C:\Jurik\Projekty\EShopConnection\XMLtoCSV\obj\Debug\XMLtoCSV.Properties.Resources.resources
+C:\Jurik\Projekty\EShopConnection\XMLtoCSV\obj\Debug\XMLtoCSV.csproj.GenerateResource.Cache
+C:\Jurik\Projekty\EShopConnection\XMLtoCSV\bin\Debug\XMLtoCSV.exe
+C:\Jurik\Projekty\EShopConnection\XMLtoCSV\bin\Debug\XMLtoCSV.pdb
+C:\Jurik\Projekty\EShopConnection\XMLtoCSV\obj\Debug\XMLtoCSV.exe
+C:\Jurik\Projekty\EShopConnection\XMLtoCSV\obj\Debug\XMLtoCSV.pdb

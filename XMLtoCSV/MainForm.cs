@@ -40,6 +40,9 @@ namespace XMLtoCSV
                 try
                 {
                     xmlContent.ReadXml(xmlFile);
+
+                    dataGrid.DataSource = xmlContent;
+                    dataGrid.DataMember = "PRODUCT";
                 }
                 catch (Exception ex)
                 {
@@ -52,6 +55,36 @@ namespace XMLtoCSV
         {
             gridPanel.Top = 33;
             dataGrid.Top = 0;
+        }
+
+        private void butExportToCsv_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            DataTable dt = xmlContent.Tables[1];
+
+            string[] columnNames = dt.Columns.Cast<DataColumn>().
+                                              Select(column => column.ColumnName).
+                                              ToArray();
+            sb.AppendLine(string.Join(",", columnNames));
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string[] fields = row.ItemArray.Select(field => field.ToString()).
+                                                ToArray();
+                sb.AppendLine(string.Join(",", fields));
+            }
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.DefaultExt = ".csv";
+            sfd.AddExtension = true;
+            sfd.Filter = "CSV Files (.csv)|*.csv|All Files (*.*)|*.*";
+            //sfd.FilterIndex = 1;
+            
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(@sfd.FileName, sb.ToString());
+            }
         }
 
         

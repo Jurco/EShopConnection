@@ -34,6 +34,7 @@
             this.gridPanel = new System.Windows.Forms.Panel();
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.butExportToCsv = new System.Windows.Forms.Button();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.menuPanel.SuspendLayout();
@@ -69,9 +70,9 @@
             // 
             this.gridPanel.Controls.Add(this.dataGrid);
             this.gridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridPanel.Location = new System.Drawing.Point(0, 37);
+            this.gridPanel.Location = new System.Drawing.Point(0, 76);
             this.gridPanel.Name = "gridPanel";
-            this.gridPanel.Size = new System.Drawing.Size(443, 123);
+            this.gridPanel.Size = new System.Drawing.Size(602, 225);
             this.gridPanel.TabIndex = 3;
             // 
             // dataGrid
@@ -80,25 +81,36 @@
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGrid.Location = new System.Drawing.Point(0, 0);
             this.dataGrid.Name = "dataGrid";
-            this.dataGrid.Size = new System.Drawing.Size(443, 123);
+            this.dataGrid.Size = new System.Drawing.Size(602, 225);
             this.dataGrid.TabIndex = 0;
             // 
             // menuPanel
             // 
+            this.menuPanel.Controls.Add(this.butExportToCsv);
             this.menuPanel.Controls.Add(this.txtXMLFile);
             this.menuPanel.Controls.Add(this.labXML);
             this.menuPanel.Controls.Add(this.butBrowse);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(443, 37);
+            this.menuPanel.Size = new System.Drawing.Size(602, 76);
             this.menuPanel.TabIndex = 4;
+            // 
+            // butExportToCsv
+            // 
+            this.butExportToCsv.Location = new System.Drawing.Point(12, 32);
+            this.butExportToCsv.Name = "butExportToCsv";
+            this.butExportToCsv.Size = new System.Drawing.Size(116, 34);
+            this.butExportToCsv.TabIndex = 3;
+            this.butExportToCsv.Text = "EXPORT to CSV";
+            this.butExportToCsv.UseVisualStyleBackColor = true;
+            this.butExportToCsv.Click += new System.EventHandler(this.butExportToCsv_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 160);
+            this.ClientSize = new System.Drawing.Size(602, 301);
             this.Controls.Add(this.gridPanel);
             this.Controls.Add(this.menuPanel);
             this.Name = "MainForm";
@@ -121,6 +133,7 @@
         private System.Windows.Forms.Panel gridPanel;
         private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.Panel menuPanel;
+        private System.Windows.Forms.Button butExportToCsv;
     }
 }
 
