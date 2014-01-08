@@ -15,5 +15,25 @@ namespace XMLtoCSV
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            string xmlFile = "";
+
+            ofd.Filter = "XML Files (.xml)|*.xml|All Files (*.*)|*.*";
+            ofd.FilterIndex = 1;
+            ofd.Multiselect = false;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                txtXMLFile.Text = ofd.FileName;
+            }
+        }
     }
 }
