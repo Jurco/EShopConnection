@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace XMLtoCSV
 {
     public partial class MainForm : Form
     {
+        private string xmlFile = "";
+        private DataSet xmlContent = new DataSet();
+
         public MainForm()
         {
             InitializeComponent();
@@ -24,7 +28,6 @@ namespace XMLtoCSV
         private void butBrowse_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            string xmlFile = "";
 
             ofd.Filter = "XML Files (.xml)|*.xml|All Files (*.*)|*.*";
             ofd.FilterIndex = 1;
@@ -32,8 +35,25 @@ namespace XMLtoCSV
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                txtXMLFile.Text = ofd.FileName;
+                xmlFile = ofd.FileName;
+                txtXMLFile.Text = xmlFile;
+                try
+                {
+                    xmlContent.ReadXml(xmlFile);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "XML Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            gridPanel.Top = 33;
+            dataGrid.Top = 0;
+        }
+
+        
     }
 }

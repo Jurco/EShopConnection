@@ -31,12 +31,18 @@
             this.labXML = new System.Windows.Forms.Label();
             this.txtXMLFile = new System.Windows.Forms.TextBox();
             this.butBrowse = new System.Windows.Forms.Button();
+            this.gridPanel = new System.Windows.Forms.Panel();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.menuPanel = new System.Windows.Forms.Panel();
+            this.gridPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            this.menuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // labXML
             // 
             this.labXML.AutoSize = true;
-            this.labXML.Location = new System.Drawing.Point(12, 9);
+            this.labXML.Location = new System.Drawing.Point(13, 9);
             this.labXML.Name = "labXML";
             this.labXML.Size = new System.Drawing.Size(48, 13);
             this.labXML.TabIndex = 0;
@@ -44,14 +50,14 @@
             // 
             // txtXMLFile
             // 
-            this.txtXMLFile.Location = new System.Drawing.Point(81, 6);
+            this.txtXMLFile.Location = new System.Drawing.Point(82, 6);
             this.txtXMLFile.Name = "txtXMLFile";
             this.txtXMLFile.Size = new System.Drawing.Size(280, 20);
             this.txtXMLFile.TabIndex = 1;
             // 
             // butBrowse
             // 
-            this.butBrowse.Location = new System.Drawing.Point(374, 4);
+            this.butBrowse.Location = new System.Drawing.Point(375, 4);
             this.butBrowse.Name = "butBrowse";
             this.butBrowse.Size = new System.Drawing.Size(43, 23);
             this.butBrowse.TabIndex = 2;
@@ -59,19 +65,51 @@
             this.butBrowse.UseVisualStyleBackColor = true;
             this.butBrowse.Click += new System.EventHandler(this.butBrowse_Click);
             // 
+            // gridPanel
+            // 
+            this.gridPanel.Controls.Add(this.dataGrid);
+            this.gridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridPanel.Location = new System.Drawing.Point(0, 37);
+            this.gridPanel.Name = "gridPanel";
+            this.gridPanel.Size = new System.Drawing.Size(443, 123);
+            this.gridPanel.TabIndex = 3;
+            // 
+            // dataGrid
+            // 
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGrid.Location = new System.Drawing.Point(0, 0);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.Size = new System.Drawing.Size(443, 123);
+            this.dataGrid.TabIndex = 0;
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.Controls.Add(this.txtXMLFile);
+            this.menuPanel.Controls.Add(this.labXML);
+            this.menuPanel.Controls.Add(this.butBrowse);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(443, 37);
+            this.menuPanel.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 160);
-            this.Controls.Add(this.butBrowse);
-            this.Controls.Add(this.txtXMLFile);
-            this.Controls.Add(this.labXML);
+            this.Controls.Add(this.gridPanel);
+            this.Controls.Add(this.menuPanel);
             this.Name = "MainForm";
             this.Text = "XMLtoCSV";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
+            this.gridPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            this.menuPanel.ResumeLayout(false);
+            this.menuPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -80,6 +118,9 @@
         private System.Windows.Forms.Label labXML;
         private System.Windows.Forms.TextBox txtXMLFile;
         private System.Windows.Forms.Button butBrowse;
+        private System.Windows.Forms.Panel gridPanel;
+        private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.Panel menuPanel;
     }
 }
 
